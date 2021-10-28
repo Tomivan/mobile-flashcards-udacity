@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "flashcards",
+    "slug": "flashcards",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "flashcards"
+}
