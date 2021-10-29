@@ -1,21 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import React from "react";
+import { View } from "react-native";
+import { createAppContainer } from "react-navigation";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+
+import reducer from "./reducers/decks";
+import middleware from "./middleware";
+
+import Stacks from "./components/Stacks";
+import UMFStatusBar from "./components/StatusBar";
+import { setLocalNotification } from "./utils/notifications";
+import { standout } from "./styles/colors";
+
+const store = createStore(reducer, middleware);
+const Navigation = createAppContainer(Stacks);
+
+export default class App extends React.Component {
+  componentDidMount() {
+    setLocalNotification();
+  }
+
+  render() {
+    return (
+      <Provider store={store}>
+        <View style={{ flex: 1 }}>
+          <UMFStatusBar backgroundColor={standout} barStyle="light-content" />
+          <Navigation />
+        </View>
+      </Provider>
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
