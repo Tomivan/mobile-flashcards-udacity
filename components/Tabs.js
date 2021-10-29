@@ -3,9 +3,9 @@ import { Platform } from "react-native";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
-import Decks from "./../views/Decks";
-import AddDeck from "./../views/AddDeck";
-import { standout, secondaryLight } from "./../styles/colors";
+import Decks from "../views/Decks";
+import AddDeck from "../views/AddDeck";
+import { standout, secondaryLight } from "../styles/colors";
 
 const Tabs = createBottomTabNavigator(
   {
