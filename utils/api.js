@@ -1,4 +1,4 @@
-import { AsyncStorage } from "react-native";
+import { AsyncStorage } from "@react-native-community/AsyncStorage";
 
 export const FL_KEY = "UND_NCP_MobileFlashcards";
 
