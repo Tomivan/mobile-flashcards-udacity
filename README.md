@@ -41,3 +41,13 @@ Once you have the Expo app on your device, make sure your computer (running expo
 Please note: Once the app is running via yarn start, ensure that in your browser, on http://localhost:19002/ that you see the words "Tunnel ready" before scanning and opening the QR Code.
 
 Once you have scanned the code, your mobile device will open the app to the app home screen.
+
+
+If you are having a metro bundler error, change the sharedBlacklist code below to '\node_modules\metro-config\src\defaults\blacklist.js' :
+
+var sharedBlacklist = [
+  /node_modules[\/\\]react[\/\\]dist[\/\\].*/,
+  /website\/node_modules\/.*/,
+  /heapCapture\/bundle\.js/,
+  /.*\/__tests__\/.*/
+];
